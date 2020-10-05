@@ -1,11 +1,24 @@
 package td1.refactor.api.general;
 
-public class Meat implements Product {
+public class Meat implements FoodProduct {
 
-    public enum MeatType {
+    public enum MeatType implements FoodConstituent{
         BEEF, WHITEFISH;
         // BEEF : 200 kcal / 100g
         // WHITEFISH : 170 kcal / 100g
+
+        @Override
+        public double calories_per_100g(){
+            double rtr;
+            switch (this ){
+                case WHITEFISH:
+                    rtr = 170; break;
+                case BEEF:
+                default:
+                    rtr = 200;
+            }
+            return rtr;
+        }
 
         public double price() {
             double rtr;
