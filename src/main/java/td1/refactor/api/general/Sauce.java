@@ -1,12 +1,30 @@
 package td1.refactor.api.general;
 
-public class Sauce implements Product {
+import static td1.refactor.api.general.Sauce.SauceType.BURGER;
+import static td1.refactor.api.general.Sauce.SauceType.BEARNAISE;
+import static td1.refactor.api.general.Sauce.SauceType.BARBECUE;
 
-    public static enum SauceType {
+public class Sauce implements FoodProduct {
+
+    public static enum SauceType implements FoodConstituent {
         BURGER, BARBECUE, BEARNAISE;
-        // BURGER : 240 kcal / 100g
-        // BARBECUE : 130 kcal / 100g
-        // BEARNAISE : 550 kcal / 100g
+
+        @Override
+        public double calories_per_100g() {
+            double rtr = 0;
+            switch ( this ){
+                case BURGER:
+                    rtr= 240;
+                    break;
+                case BEARNAISE:
+                    rtr= 550;
+                    break;
+                case BARBECUE:
+                default:
+                    rtr = 240;
+            }
+            return rtr;
+        }
     }
 
     private static double BASE_PRICE = 1;

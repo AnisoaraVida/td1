@@ -10,6 +10,11 @@ public class Tomato implements FoodProduct {
     }
 
     @Override
+    public double calories_per_100g(){
+        return 21;
+    }
+
+    @Override
     public double weight() {
         return weight;
     }
