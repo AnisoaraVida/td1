@@ -1,6 +1,6 @@
 package td1.refactor.api.general;
 
-public enum MenuType implements FoodConstituent{
+public enum MeatType implements FoodConstituent{
     BEEF, WHITEFISH;
 
     @Override

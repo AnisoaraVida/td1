@@ -1,0 +1,102 @@
+@startuml
+
+class Burger
+class Cheddar
+class DeepFriedOnions
+class Meat
+class Sauce
+class Tomato
+
+interface FoodConstituent
+interface FoodProduct
+interface Product
+
+enum MeatType
+enum SauceType
+
+ FoodConstituent <-- FoodProduct
+ FoodConstituent <-- Product
+ FoodProduct <.. Tomato
+ FoodProduct <.. Burger
+ FoodProduct <.. DeepFriedOnions
+ FoodProduct <.. Cheddar
+ FoodProduct <.. Sauce
+ SauceType <-- Sauce
+ MeatType <-- Meat
+ FoodConstituent <.. SauceType
+ FoodConstituent <.. MeatType
+
+
+
+
+interface Product{
+ weight():double
+ price():double
+ calories():double
+}
+
+interface FoodProduct{
+ calories():double "default"
+}
+
+interface FoodConstituent{
+ calories_per_100g():double
+}
+
+class Burger{
+ -name : String
+ +this(name:String, items: List<FoodProduct>)
+ +weight():double
+ +price():double
+ +calories_per_100g():double
+ +calories():double
+}
+
+class Tomato{
+ -weight:double
+ -BASE_PRICE:double=0.5
+ +this(weight:double)
+ +weight():double
+ +price():double
+ +calories_per_100g():double
+}
+
+class DeepFriedOnions{
+ -weight:double
+ -BASE_PRICE:double=1.5
+ +this(weight:double)
+ +weight():double
+ +price():double
+ +calories_per_100g():double
+}
+
+class Cheddar{
+ -weight:double
+ -BASE_PRICE:double=4
+ +this(weight:double)
+ +weight():double
+ +price():double
+ +calories_per_100g():double
+}
+
+class Sauce{
+ -weight:double
+ -BASE_PRICE:double=1
+ +this(weight:double)
+ +weight():double
+ +price():double
+ +calories_per_100g():double
+}
+
+enum SauceType{
+ BURGER, BARBECUE, BEARNAISE
+ +calories_per_100g():double
+}
+
+enum MeatType{
+ BEEF, WHITEFISH
+ +price():double
+ +calories_per_100g():double
+}
+
+@enduml
