@@ -48,6 +48,11 @@ public class Sauce implements FoodProduct {
     }
 
     @Override
+    public double calories_per_100g() {
+        return type.calories_per_100g();
+    }
+
+    @Override
     public String toString() {
         return String.format("%s sauce (%.0fg) -- %.2f€", type, weight(), price());
     }

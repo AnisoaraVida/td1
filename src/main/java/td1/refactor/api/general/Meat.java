@@ -12,7 +12,8 @@ public class Meat implements FoodProduct {
             double rtr;
             switch (this ){
                 case WHITEFISH:
-                    rtr = 170; break;
+                    rtr = 170;
+                    break;
                 case BEEF:
                 default:
                     rtr = 200;
@@ -50,6 +51,11 @@ public class Meat implements FoodProduct {
     @Override
     public double weight() {
         return weight;
+    }
+
+    @Override
+    public double calories_per_100g(){
+        return type.calories_per_100g();
     }
 
     @Override

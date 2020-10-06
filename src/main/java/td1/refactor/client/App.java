@@ -1,8 +1,8 @@
 package td1.refactor.client;
 
-import td1.original.api.general.*;
-import static td1.original.api.general.Meat.MeatType.*;
-import static td1.original.api.general.Sauce.SauceType.*;
+import td1.refactor.api.general.*;
+import static td1.refactor.api.general.Meat.MeatType.*;
+import static td1.refactor.api.general.Sauce.SauceType.*;
 
 import java.util.Arrays;
 import java.util.List;
