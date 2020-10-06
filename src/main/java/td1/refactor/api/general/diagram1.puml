@@ -50,6 +50,7 @@ class Burger{
  +price():double
  +calories_per_100g():double
  +calories():double
+ +toString : String
 }
 
 class Tomato{
@@ -59,6 +60,7 @@ class Tomato{
  +weight():double
  +price():double
  +calories_per_100g():double
+ +toString : String
 }
 
 class DeepFriedOnions{
@@ -68,6 +70,7 @@ class DeepFriedOnions{
  +weight():double
  +price():double
  +calories_per_100g():double
+ +toString : String
 }
 
 class Cheddar{
@@ -77,6 +80,7 @@ class Cheddar{
  +weight():double
  +price():double
  +calories_per_100g():double
+ +toString : String
 }
 
 class Sauce{
@@ -86,6 +90,17 @@ class Sauce{
  +weight():double
  +price():double
  +calories_per_100g():double
+ +toString : String
+}
+
+class Meat{
+ -weight:double
+ -BASE_PRICE:double=1
+ +this(weight:double)
+ +weight():double
+ +price():double
+ +calories_per_100g():double
+ +toString : String
 }
 
 enum SauceType{
@@ -95,7 +110,6 @@ enum SauceType{
 
 enum MeatType{
  BEEF, WHITEFISH
- +price():double
  +calories_per_100g():double
 }
 
